@@ -1,0 +1,7 @@
+.navbar{
+  padding: 12px;
+}
+.navbar .nav-item :hover {
+  border-bottom: 6px solid black;
+}
+

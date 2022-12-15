@@ -1,0 +1,84 @@
+
+.body-login{
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: #22262b; */
+}
+.container{
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  border-radius: 30px;
+  height: 75vh;
+  width: 50%;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.left{
+  flex: 2;
+  height: 100%;
+  background-color: var(--primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.left h3{
+  color: var(--secondary);
+}
+.left .img-car{
+  width: 100%;
+}
+.right{
+  flex: 1;
+  height: 100%;
+  background-color: var(--secondary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 80px 40px 80px 40px;
+}
+.right h2{
+  color: var(--primary);
+  margin-bottom: 80px;
+}
+.right form{
+  width: 100%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.right form .wrapper-input{
+  display: flex;
+  flex-direction: column;
+}
+.right form .input-login{
+  background-color: var(--primary);
+  outline: none;
+  padding: 8px 16px 8px 16px;
+  border-radius: 30px;
+  border: none;
+}
+.right form .input-login.username{
+  margin-bottom: 24px;
+}
+.right form .btn-submit-login{
+  cursor: pointer;
+  background-color: var(--secondary);
+  outline: none;
+  padding: 8px 16px 8px 16px;
+  border-radius: 30px;
+  color: var(--primary);
+  border: 1px solid var(--primary);
+  font-weight: bold;
+}
+.right form .btn-submit-login:hover{
+  background-color: var(--primary);
+  color: var(--secondary);
+  transition: all .2s ease;
+}
