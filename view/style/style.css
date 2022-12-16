@@ -1,5 +1,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
 
 
 *{
@@ -11,4 +12,38 @@
 :root{
   --primary: #FEE7E7;
   --secondary: #910808;
+}
+h1,h2,h3,h4,h5,h6,p{
+  margin-bottom: 0;
+}
+
+.navbar {
+  font-family: 'Nunito', sans-serif;
+  font-weight: bold;
+  padding: 16px 72px;
+}
+.navbar img{
+  width: 72px;
+}
+.navbar button{
+  margin-left: auto;
+  border: none;
+  padding: 8px 24px;
+  background-color: red;
+  color: white;
+  border-radius: 24px;
+}
+.navbar .nav-item :hover {
+  border-bottom: 6px solid black;
+}
+
+.sosmed-icons img{
+  width: 32px;
+  cursor: pointer;
+  margin-right: 24px;
+}
+.copyright{
+  margin-top: 56px;
+  font-weight: bold;
+  text-align: center;
 }
