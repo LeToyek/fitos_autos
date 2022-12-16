@@ -1,3 +1,3 @@
 <?php 
-  header("Location:../view/pages/home.html");
+  json_encode("Hello");
 ?>
