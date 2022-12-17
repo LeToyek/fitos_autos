@@ -8,7 +8,6 @@
   <link rel="stylesheet" href="../style/style.css">
   <link rel="stylesheet" href="../style/login.css" />
   <script src="../jquery.js"></script>
-  <script src="../js/validation.js">
     
   </script>
   <title>Document</title>
@@ -23,12 +22,15 @@
     </div>
     <div class="right">
       <h2>Login</h2>
-      <form id="formKu" method="POST">
+      <form id="formKu" action="../../controller/login_process.php" method="POST">
         <div class="wrapper-input">
-          <input type="text" class="input-login username" id="username" placeholder="Username" />
-          <input type="password" class="input-login password" id="password" placeholder="Password" />
+          <input type="text"
+          name="username"
+          class="input-login username" id="username" placeholder="Username" />
+          <input type="password"
+          name="password" class="input-login password" id="password" placeholder="Password" />
         </div>
-        <input type="submit" class="btn-submit-login" value="Login" id="submit" />
+        <input type="submit" class="btn-submit-login" value="Login" id="submit" name="submit" />
       </form>
     </div>
   </div>
