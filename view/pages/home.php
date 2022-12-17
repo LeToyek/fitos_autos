@@ -17,6 +17,9 @@
     <title>Document</title>
   </head>
   <body>
+    <?php
+    session_start();
+    ?>
     <nav class="navbar navbar-expand-sm navbar-light">
       <img src="../images/logo.png" style="margin-right: 24px
       ;" alt="">

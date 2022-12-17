@@ -1,12 +1,13 @@
 <?php 
   include "./database/connection.php";
 
+  session_start();
   if (isset($_SESSION['username'])) {
-    header("Location: berhasil_login.php");
+    header("Location: home.php");
     }
   
   if (isset($_POST['submit'])){
-    $username = $_POST['username'];
+  $username = $_POST['username'];
   $password = md5($_POST['password']);
 
   $query = "SELECT * FROM user WHERE username = '$username' && password = '$password'";
@@ -15,8 +16,9 @@
 
   if ($check>0) {
     $row = mysqli_fetch_assoc($result);
+    $_SESSION['awik'] = "aoskdaosk";
     $_SESSION['username'] = $row['username'];
-    header("Location:../view/pages/home.html");
+    header("Location:../view/pages/home.php");
   }else{
     var_dump($check);
     header("Location:../view/pages/login.php?error=failed");
