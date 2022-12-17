@@ -1,0 +1,23 @@
+.container.main{
+
+}
+.container.main .title{
+  display: flex;
+  align-items: center;
+}
+.bottom .card{
+  display: flex;
+  padding: 24px 32px;
+  border-radius: 16px;
+  background-color: var(--primary);
+}
+.bottom .card .top {
+  display: flex;
+  justify-content: space-between;
+}
+.bottom .card .img-car{
+  width: 40vw;
+}
+.bottom .card .detail{
+  width: 40vw;
+}
