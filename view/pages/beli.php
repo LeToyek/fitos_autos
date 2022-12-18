@@ -26,7 +26,7 @@
           <a class="nav-link" href="garage.html">Garasi</a>
         </li>
       </ul>
-      <button>Logout</button>
+      <button onclick="location.href='Login.php';">Logout</button>
       <div class="img-container"></div>
     </nav>
     <main>
