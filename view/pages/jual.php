@@ -31,7 +31,7 @@
       <div class="img-container"></div>
     </nav>
     
-    <form class="needs-validation container" action="../../controller/form_jual_process.php"  novalidate>
+    <form class="needs-validation container" action="../../controller/form_jual_process.php" method="POST"  novalidate>
       <div class="statis" style="margin-bottom: 24px;">
         <div class="title">
           <h5>Formulir Penjualan Mobil</h5>

@@ -18,17 +18,14 @@
   $kilometer = $_POST['kilometer'];
   $pajak_date = $_POST['pajak_date'];
 
-  $sql = "INSERT INTO mobil('id','id_penjual','nama','merek','harga'
-      ,'foto','deskripsi','lokasi','transmisi'
-      ,'jml_penumpang','tipe','tahun',kilometer'
-      ,'pajak_jalan_exp') VALUES (
-        NULL,'1', '$nama', '$merk', '$price', '$foto'
+  $sql = "INSERT INTO mobil VALUES (
+        '','$id_penjual', '$nama', '$merk', '$price', '$foto'
         , '$deskripsi', '$alamat', '$transmisi'
         , '$jumlah_penumpang', '$tipe', '$tahun'
         , '$kilometer', '$pajak_date')";
-  if (mysqli_query($connect, $sql)) {
+  if (mysqli_query($conn, $sql)) {
         echo "Data berhasil ditambah <br>";
     } else {
-        echo "Data gagal ditambahkan <br>" . mysqli_error($connect);
+        echo "Data gagal ditambahkan <br>" . mysqli_error($conn);
     }
-    mysqli_close($connect);
+    mysqli_close($conn);
