@@ -30,10 +30,10 @@
     <nav class="navbar navbar-expand-sm navbar-light">
       <img src="../images/logo.png" style="margin-right: 24px" alt="" />
       <ul class="navbar-nav">
-        <li class="nav-item active">
+        <li class="nav-item">
           <a class="nav-link nav-link-ltr" href="home.php">Home</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item active">
           <a class="nav-link nav-link-ltr" href="jual.php">Jual</a>
         </li>
         <li class="nav-item">

@@ -21,19 +21,20 @@
   <nav class="navbar navbar-expand-sm navbar-light">
     <img src="../images/logo.png" style="margin-right: 24px" alt="" />
     <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link nav-link-ltr" href="home.php">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link nav-link-ltr" href="jual.php">Jual</a>
+      </li>
       <li class="nav-item active">
-        <a class="nav-link" href="home.php">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="jual.php">Jual</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="garage.php">Garasi</a>
+        <a class="nav-link nav-link-ltr" href="garage.php">Garasi</a>
       </li>
     </ul>
     <button onclick="location.href = '../../controller/logout_process.php'">Logout</button>
     <div class="img-container"></div>
   </nav>
+  
   <div class="container main">
     <div class="title">
       <h5>Koleksi Mobil Kami</h5>
