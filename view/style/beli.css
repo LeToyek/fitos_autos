@@ -1,0 +1,20 @@
+.container.m-card{
+  display: flex;
+  padding: 24px 40px;
+  height: fit-content;
+}
+.container.m-card .left{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding-right: 32px;
+}
+.container.m-card .left button{
+  padding: 8px 40px;
+  width: fit-content;
+  border: none;
+  border-radius: 30px;
+  color: white;
+  font-weight: bold;
+  background-color: #300303;
+}
