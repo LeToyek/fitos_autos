@@ -34,6 +34,10 @@ p {
   width: 72px;
 }
 
+.navbar .logout-btn {
+  margin-left: auto;
+}
+
 .navbar button {
   margin-left: auto;
   border: none;

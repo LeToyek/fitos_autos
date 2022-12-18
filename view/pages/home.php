@@ -32,55 +32,29 @@
           <a class="nav-link nav-link-ltr" href="garage.html">Garasi</a>
         </li>
       </ul>
-      <button>Logout</button>
-      <div class="img-container"></div>
+      <?php
+        session_start();
+        if(isset($_SESSION['level'])){
+          if($_SESSION['level'] == 'admin'){
+            header('Location: admin.php');
+          }else if($_SESSION['username']){
+            echo '
+            <div class="d-flex ml-auto space-between">
+              <a class="px-4 my-auto text-dark" href="user_profile.php"><p>' . $_SESSION['username'] . '</p></a>
+              <a class="logout-btn"href="../../controller/logout.php"><button>Logout</button></a>
+            </div>
+            ';
+          }
+        }
+        else{
+          echo '<a class="logout-btn"href="./login.php"><button>Login</button></a>';
+        }
+      ?>
     </nav>
     <div class="container-fluid px-5 main">
       <div class="row h-100">
         <div class="col-lg-12 w-100 jumbotron"></div>
       </div>
-      <!-- <div class="d-flex justify-content-center">
-      <img src="../images/chirstmas.png" alt="chirstmas">
-    </div> -->
-      <!-- <div class="sec-container">
-      <div class="top" style="display: flex; align-items: center;">
-        <h5 style="font-weight: 900;">Jual Mobil</h5>
-        <img src="../icons/right-arrow.png" style="margin-left: 8px; margin-bottom: 4px; width: 16px; cursor: pointer;"
-          alt="">
-      </div>
-      <div class="bottom">
-        <div class="my-container">
-          <div class="card-car">
-            <div class="nav-card-car">
-              <h6>Spesifikasi</h6>
-              <h4>Mobil Mewah</h4>
-            </div>
-            <img src="../images/left-car.png" alt="">
-          </div>
-          <div class="card-car">
-            <div class="nav-card-car">
-              <h6>Spesifikasi</h6>
-              <h4>Mobil Mewah</h4>
-            </div>
-            <img src="../images/left-car.png" alt="">
-          </div>
-          <div class="card-car">
-            <div class="nav-card-car">
-              <h6>Spesifikasi</h6>
-              <h4>Mobil Mewah</h4>
-            </div>
-            <img src="../images/left-car.png" alt="">
-          </div>
-          <div class="card-car">
-            <div class="nav-card-car">
-              <h6>Spesifikasi</h6>
-              <h4>Mobil Mewah</h4>
-            </div>
-            <img src="../images/left-car.png" alt="">
-          </div>
-        </div>
-      </div>
-    </div> -->
       <div class="sec-container">
         <div class="top d-flex align-center">
           <h5 style="font-weight: 900">Koleksi Mobil</h5>
@@ -135,45 +109,6 @@
               <img src="../images/left-car.png" alt="" />
             </div>
           </div>
-          <!-- <div id="carousel" class="carousel slide" data-ride="carousel">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <div class="card-car">
-                <div class="nav-card-car">
-                  <h6>Spesifikasi</h6>
-                  <h4>Mobil Mewah</h4>
-                </div>
-                <img class="d-block" src="../images/left-car.png" alt="">
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="card-car">
-                <div class="nav-card-car">
-                  <h6>Spesifikasi</h6>
-                  <h4>Mobil Mewah</h4>
-                </div>
-                <img class="d-block" src="../images/left-car.png" alt="">
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="card-car">
-                <div class="nav-card-car">
-                  <h6>Spesifikasi</h6>
-                  <h4>Mobil Mewah</h4>
-                </div>
-                <img class="d-block" src="../images/left-car.png" alt="">
-              </div>
-            </div>
-          </div>
-          <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
-        </div> -->
         </div>
       </div>
     </div>
@@ -184,7 +119,7 @@
           Jual mobil lewat Fitos Autos,<br />
           cepat lakunya, dapat untungnya
         </p>
-        <button class="btn-jual">Jual Sekarang</button>
+        <a href="jual.php"><button class="btn-jual">Jual Sekarang</button></a>
       </div>
 
       <img src="../images/right-car.png" alt="" />

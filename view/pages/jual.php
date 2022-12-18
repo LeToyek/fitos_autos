@@ -11,14 +11,27 @@
     />
     <link rel="stylesheet" href="../style/style.css" />
     <link rel="stylesheet" href="../style/jual.css">
+    <link rel="stylesheet" href="../style/jquery-ui-1.13.2/jquery-ui.css">
+    <script src="../jquery.js"></script>
+    <script src="../style/jquery-ui-1.13.2/jquery-ui.js"></script>
+    <script>
+        $(function () {
+            $("#date_ex").datepicker();
+        });
+    </script>
   </head>
-
   <body>
+    <?php
+      session_start();
+      if(!$_SESSION['username'] || $_SESSION['level'] == 1){
+
+      }
+    ?>
     <nav class="navbar navbar-expand-sm navbar-light">
       <img src="../images/logo.png" style="margin-right: 24px" alt="" />
       <ul class="navbar-nav">
         <li class="nav-item active">
-          <a class="nav-link nav-link-ltr" href="#">Home</a>
+          <a class="nav-link nav-link-ltr" href="home.php">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link nav-link-ltr" href="#">Sewa</a>
@@ -27,21 +40,36 @@
           <a class="nav-link nav-link-ltr" href="garage.html">Garasi</a>
         </li>
       </ul>
-      <button>Logout</button>
-      <div class="img-container"></div>
+      <?php
+        if(isset($_SESSION['level'])){
+          if($_SESSION['level'] == 'admin'){
+            header('Location: admin.php');
+          }else if($_SESSION['username']){
+            echo '
+            <div class="d-flex ml-auto space-between">
+              <a class="px-4 my-auto text-dark" href="user_profile.php"><p>' . $_SESSION['username'] . '</p></a>
+              <a class="logout-btn"href="../../controller/logout.php"><button>Logout</button></a>
+            </div>
+            ';
+          }
+        }
+        else{
+          echo '<a class="logout-btn"href="./login.php"><button>Login</button></a>';
+        }
+      ?>
     </nav>
     
-    <form class="needs-validation container" action="../../controller/form_jual_process.php" method="POST"  novalidate>
+    <form class="needs-validation container p-5 mt-5" enctype="multipart/form-data" action="../../controller/form_jual_process.php" method="POST" novalidate>
       <div class="statis" style="margin-bottom: 24px;">
         <div class="title">
-          <h5>Formulir Penjualan Mobil</h5>
+          <h4 class="mr-2 mb-2">Formulir Penjualan Mobil</h4>
           <img src="../icons/car.png" alt="" />
         </div>
         <p>
-          harap isi formulir dengan benar
+          Harap isi formulir dengan benar
         </p>
       </div>
-      <div class="form-row">
+      <div class="form-row mt-2">
         <div class="form-group col-md-8">
           <label for="validationCustom01">Nama Mobil</label>
           <input
@@ -50,24 +78,26 @@
             class="form-control"
             id="validationCustom01"
             placeholder="Nama"
+            value="<?php echo (isset($_COOKIE['nama'])) ? $_COOKIE['nama'] : ''?>"
             required
           />
           <div class="invalid-feedback">Nama Harus diisi</div>
         </div>
         <div class="form-group col-md-4">
-          <label for="inputPassword4">Merk Mobil</label>
+          <label>Merk Mobil</label>
           <input
             name="merk"
             type="text"
             class="form-control"
             id="inputPassword4"
             placeholder="Merk"
+            value="<?php echo (isset($_COOKIE['merk'])) ? $_COOKIE['merk'] : ''?>"
             required
           />
           <div class="invalid-feedback">Merk Harus diisi</div>
         </div>
       </div>
-      <div class="form-group">
+      <div class="form-group mt-2">
         <label for="inputHarga">Harga</label>
         <div class="input-group">
           <div class="input-group-prepend">
@@ -78,33 +108,35 @@
             name="price"
             class="form-control"
             id="inlineFormInputGroupUsername"
-            placeholder="1000000"
+            placeholder="10000000"
             required
+            value="<?php echo (isset($_COOKIE['harga'])) ? $_COOKIE['harga'] : ''?>"
           />
           <div class="invalid-feedback">Harga masih kosong</div>
         </div>
       </div>
-      <div class="form-group">
+      <div class="form-group mt-2 d-flex flex-column">
         <label for="formFileSm" class="form-label">Foto Mobil</label>
         <input
-          name="foto"
-          class="form-control form-control-sm"
-          id="formFileSm"
           type="file"
+          name="foto"
+          class="w-25"
+          id="formFileSm"
           required
         />
         <div class="invalid-feedback">Foto masih kosong</div>
       </div>
-      <div class="form-group">
+      <div class="form-group mt-2">
         <label for="exampleFormControlTextarea1">Deskripsi</label>
         <textarea
-        name="deskripsi"
+          name="deskripsi"
           class="form-control"
           id="exampleFormControlTextarea1"
           rows="3"
+          value="<?php echo (isset($_COOKIE['deskripsi'])) ? $_COOKIE['deskripsi'] : ''?>"
         ></textarea>
       </div>
-      <div class="form-group">
+      <div class="form-group mt-2">
         <label for="inputEmail4">Alamat</label>
         <input
           name="alamat"
@@ -112,12 +144,13 @@
           class="form-control"
           id="inputEmail4"
           placeholder="Alamat"
+          value="<?php echo (isset($_COOKIE['alamat'])) ? $_COOKIE['alamat'] : ''?>"
           required
         />
         <div class="invalid-feedback">Alamat harus diisi</div>
       </div>
       <div class="form-row">
-        <div class="form-group col-md-5">
+        <div class="form-group mt-2 col-md-5">
           <label for="inputState">Transmisi</label>
           <select 
           name="transmisi"
@@ -126,7 +159,7 @@
             <option>Automatic</option>
           </select>
         </div>
-        <div class="form-group col-md-2">
+        <div class="form-group mt-2 col-md-2">
           <label for="inputState">Jumlah Penumpang</label>
           <select
           name="jumlah_penumpang" 
@@ -137,7 +170,7 @@
             <option value="7&keatas">7 dan keatas</option>
           </select>
         </div>
-        <div class="form-group col-md-5">
+        <div class="form-group mt-2 col-md-5">
           <label for="inputState">Tipe</label>
           <select 
           name="tipe"
@@ -155,7 +188,7 @@
         </div>
       </div>
       <div class="form-row">
-        <div class="form-group col-md-4">
+        <div class="form-group mt-2 col-md-4">
           <label for="validationCustom01">Tahun</label>
           <input
           name="tahun"
@@ -164,10 +197,11 @@
             id="validationCustom01"
             placeholder="2024"
             required
+            value="<?php echo (isset($_COOKIE['tahun'])) ? $_COOKIE['tahun'] : ''?>"
           />
           <div class="invalid-feedback">Tahun pembelian harus diisi</div>
         </div>
-        <div class="form-group col-md-4">
+        <div class="form-group mt-2 col-md-4">
           <label for="validationCustom02">Kilometer</label>
           <input
           name="kilometer"
@@ -175,31 +209,39 @@
             class="form-control"
             id="validationCustom02"
             placeholder="1999"
+            value="<?php echo (isset($_COOKIE['kilometer'])) ? $_COOKIE['kilometer'] : ''?>"
             required
           />
           <div class="invalid-feedback">Kilometer belum diisi</div>
 
         </div>
-        <div class="form-group col-md-4">
+        <div class="form-group mt-2 col-md-4">
           <label for="validationCustom02">Pajak Jalan Exp</label>
-          <input
+          <!-- <input
           name="pajak_date"
             class="form-control"
             id="datepicker"
             placeholder="2 Desember 2015"
             required
-          />
+          /> -->
+          <input name="pajak_date" class="form-control" type="text" id="date_ex">
           <div class="invalid-feedback">Pajak masih kosong</div>
         </div>
       </div>
-      <div class="form-group">
+      <div class="form-group mt-2">
         <div class="form-check">
-          <input class="form-check-input" type="checkbox" id="gridCheck" required />
-          <label class="form-check-label" for="gridCheck"> Saya yakin dengan formulir yang telah saya isi </label>
+          <div>
+            <input class="form-check-input" type="checkbox" id="gridCheck" required />
+            <label class="form-check-label" for="gridCheck"> Saya yakin dengan formulir yang telah saya isi </label>
+          </div>
+          <div class="mt-2">
+            <input class="form-check-input" type="checkbox" id="gridApprove" required />
+            <label class="form-check-label" for="gridApprove"> Saya setuju dengan syarat dan ketentuan yang berlaku </label>
+          </div>
           <div class="invalid-feedback">Checkbox harus dicentang</div>
         </div>
       </div>
-      <button type="submit" class="my-btn-submit">Kumpulkan</button>
+      <button type="submit" class="my-btn-submit mt-2">Kumpulkan</button>
     </form>
     <footer class="container">
       <img

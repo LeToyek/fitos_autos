@@ -1,8 +1,9 @@
-.container .title{
+.container .title {
   display: flex;
   align-items: center;
 }
-.my-btn-submit{
+
+.my-btn-submit {
   border-radius: 30px;
   padding: 8px 40px;
   background-color: #300303;
@@ -11,11 +12,14 @@
   outline: none;
   transition: all .2s ease;
 }
-.my-btn-submit:hover{
+
+.my-btn-submit:hover {
   background-color: var(--primary);
   color: #300303;
 }
 
-form{
+form {
+  border-radius: 8px;
   margin-bottom: 40px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px
 }
