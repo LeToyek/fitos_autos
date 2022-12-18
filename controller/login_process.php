@@ -20,8 +20,10 @@
       header("Location:../view/pages/home.php");
     }else{
       var_dump($check);
+      echo "<script>alert('Username atau password anda salah')</script>";
       header("Location:../view/pages/login.php?error=failed");
     }
   }
 ?>
+
 
