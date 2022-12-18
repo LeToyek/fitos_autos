@@ -23,13 +23,13 @@
       <img src="../images/logo.png" style="margin-right: 24px" alt="" />
       <ul class="navbar-nav">
         <li class="nav-item active">
-          <a class="nav-link nav-link-ltr" href="#">Home</a>
+          <a class="nav-link nav-link-ltr" href="home.php">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link nav-link-ltr" href="#">Sewa</a>
+          <a class="nav-link nav-link-ltr" href="jual.php">Sewa</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link nav-link-ltr" href="garage.html">Garasi</a>
+          <a class="nav-link nav-link-ltr" href="garage.php">Garasi</a>
         </li>
       </ul>
       <button>Logout</button>

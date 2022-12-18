@@ -20,10 +20,10 @@
           <a class="nav-link" href="home.html">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Sewa</a>
+          <a class="nav-link" href="jual.php">Sewa</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="garage.html">Garasi</a>
+          <a class="nav-link" href="garage.php">Garasi</a>
         </li>
       </ul>
       <button onclick="location.href='Login.php';">Logout</button>
