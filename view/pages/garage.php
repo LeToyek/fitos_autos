@@ -19,13 +19,13 @@
         <a class="nav-link" href="home.php">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Sewa</a>
+        <a class="nav-link" href="jual.php">Jual</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="garage.html">Garasi</a>
+        <a class="nav-link" href="garage.php">Garasi</a>
       </li>
     </ul>
-    <button>Logout</button>
+    <button onclick="location.href = '../../controller/logout_process.php'">Logout</button>
     <div class="img-container"></div>
   </nav>
   <div class="container main">
@@ -37,13 +37,13 @@
       <div class="card">
         <img class="img-car" src="../images/aven.png" alt="">
         <div class="wrapper-btn">
-          <button>Check Out</button>
+          <button onclick="location.href = 'beli.php?id=6'">Check Out</button>
         </div>
 
         <div class="bottom">
           <div class="left">
             <h6>Lamborghini aventador</h6>
-            <p>Start from <b>IDR 8.000.000.000</b></p>
+            <p>Start from <b>IDR <span>8.000.000.000</span></b></p>
           </div>
           <div class="right">
             <img class="logo-car" src="../images/lambo.png" alt="">
@@ -148,6 +148,9 @@
     <h6 class="copyright">
       © 2016-2022 PT Fitos Autos Dilindungi oleh hak cipta
     </h6>
+    <script>
+
+    </script>
 </body>
 
 </html>
