@@ -26,7 +26,7 @@
           <a class="nav-link nav-link-ltr" href="home.php">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link nav-link-ltr" href="jual.php">Sewa</a>
+          <a class="nav-link nav-link-ltr" href="jual.php">Jual</a>
         </li>
         <li class="nav-item">
           <a class="nav-link nav-link-ltr" href="garage.php">Garasi</a>

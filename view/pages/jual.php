@@ -24,14 +24,13 @@
     <?php
       session_start();
       if(!$_SESSION['username'] || $_SESSION['level'] == 1){
-
       }
+
     ?>
     <nav class="navbar navbar-expand-sm navbar-light">
       <img src="../images/logo.png" style="margin-right: 24px" alt="" />
       <ul class="navbar-nav">
         <li class="nav-item active">
-          <a class="nav-link nav-link-ltr" href="home.php">Home</a>
           <a class="nav-link nav-link-ltr" href="home.php">Home</a>
         </li>
         <li class="nav-item">

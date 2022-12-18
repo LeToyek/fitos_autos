@@ -61,6 +61,8 @@
       setcookie("tahun", "", time()-3600);
       setcookie("kilometer", "", time()-3600);
       setcookie("pajak_date", "", time()-3600);
+      sleep(3);
+      header("location:../view/pages/home.php");
     } else {
       echo "Data gagal ditambahkan <br>" . mysqli_error($conn);
       echo $sql;

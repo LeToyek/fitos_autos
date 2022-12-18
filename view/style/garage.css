@@ -16,7 +16,7 @@
   overflow: hidden;
   display: flex;
   border: none;
-  width: fit-content;
+  width: 100vw;
   border-radius: 16px;
   background-color: white;
   margin-bottom: 24px;

@@ -21,7 +21,7 @@
           <a class="nav-link" href="home.html">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="jual.php">Sewa</a>
+          <a class="nav-link" href="jual.php">Jual</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="garage.php">Garasi</a>
@@ -31,21 +31,25 @@
       <div class="img-container"></div>
     </nav>
     <main>
+      <?php 
+        include "../../controller/database/connection.php";
+
+        $id = $_GET['id'];
+        $query = "SELECT * FROM mobil WHERE id = '$id' ";
+        $get_result = mysqli_query($conn,$query);
+        $result = mysqli_fetch_assoc($get_result);
+      ?>
       <div class="container m-card">
         <div class="left">
-          <h2>Volvo S60</h2>
-          <h5>Start from <b>IDR 8.000.000.000</b></h5>
+          <h2><?php echo $result['nama']?></h2>
+          <h5>Start from <b>IDR <?php echo $result['harga']?></b></h5>
           <p>
-            Volvo is a Swedish multinational corporation that designs and
-            manufactures a wide range of vehicles, including cars, buses, and
-            trucks. Founded in 1927, the company is known for its commitment to
-            safety and innovation, and has a reputation for producing
-            high-quality, reliable vehicles
+            <?php echo $result['deskripsi']?>
           </p>
           <button class="submit-btn" onclick="location.href = '../../controller/buy_process.php?car_id=<?php echo $_GET['id']; ?>'">Buy</button>
         </div>
         <div class="right">
-          <img src="../images/volvo.png" alt="foto mobil">
+          <img src="../../controller/<?php echo $result['foto']?>" alt="foto mobil">
         </div>
       </div>
     </main>
