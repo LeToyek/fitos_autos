@@ -11,6 +11,7 @@
     />
     <link rel="stylesheet" href="../style/style.css" />
     <link rel="stylesheet" href="../style/beli.css" />
+    <script type="text/javascript" src="../jquery.js"></script>
   </head>
   <body>
     <nav class="navbar navbar-expand-sm navbar-light">
@@ -26,7 +27,7 @@
           <a class="nav-link" href="garage.php">Garasi</a>
         </li>
       </ul>
-      <button onclick="location.href='Login.php';">Logout</button>
+      <button onclick="location.href = '../../controller/logout_process.php'">Logout</button>
       <div class="img-container"></div>
     </nav>
     <main>
@@ -41,7 +42,7 @@
             safety and innovation, and has a reputation for producing
             high-quality, reliable vehicles
           </p>
-          <button>Buy</button>
+          <button class="submit-btn" onclick="location.href = '../../controller/buy_process.php?car_id=<?php echo $_GET['id']; ?>'">Buy</button>
         </div>
         <div class="right">
           <img src="../images/volvo.png" alt="foto mobil">

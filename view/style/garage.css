@@ -23,7 +23,7 @@
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 .card .bottom {
-  padding: 8px 16px;
+  padding: 8px ;
 }
 .bottom .card .top {
   display: flex;
@@ -68,5 +68,5 @@
 .card button:hover {
   background-color: black;
   color: white;
-  border: ;
+  border: 1px solid white;
 }

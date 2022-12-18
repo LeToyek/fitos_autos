@@ -19,13 +19,13 @@
         <a class="nav-link" href="home.php">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="jual.php">Sewa</a>
+        <a class="nav-link" href="jual.php">Jual</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="garage.php">Garasi</a>
       </li>
     </ul>
-    <button>Logout</button>
+    <button onclick="location.href = '../../controller/logout_process.php'">Logout</button>
     <div class="img-container"></div>
   </nav>
   <div class="container main">
@@ -37,7 +37,7 @@
       <div class="card">
         <img class="img-car" src="../images/aven.png" alt="">
         <div class="wrapper-btn">
-          <button onclick="location.href = 'beli.php?id=matamu'" >Check Out</button>
+          <button onclick="location.href = 'beli.php?id=6'">Check Out</button>
         </div>
 
         <div class="bottom">

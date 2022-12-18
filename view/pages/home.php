@@ -32,7 +32,7 @@
           <a class="nav-link nav-link-ltr" href="garage.php">Garasi</a>
         </li>
       </ul>
-      <button>Logout</button>
+      <button onclick="location.href = '../../controller/logout_process.php'">Logout</button>
       <div class="img-container"></div>
     </nav>
     <div class="container-fluid px-5 main">
