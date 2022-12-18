@@ -13,16 +13,15 @@
     $query = "SELECT * FROM user WHERE username = '$username' && password = '$password'";
     $result = mysqli_query($conn,$query);
     $check = mysqli_num_rows($result);
-
-  if ($check>0) {
-    $row = mysqli_fetch_assoc($result);
-    $_SESSION['awik'] = "aoskdaosk";
-    $_SESSION['username'] = $row['username'];
-    header("Location:../view/pages/home.php");
-  }else{
-    var_dump($check);
-    header("Location:../view/pages/login.php?error=failed");
-  }
+    if ($check>0) {
+      $row = mysqli_fetch_assoc($result);
+      $_SESSION['user_id'] = $row['id'];
+      $_SESSION['username'] = $row['username'];
+      header("Location:../view/pages/home.php");
+    }else{
+      var_dump($check);
+      header("Location:../view/pages/login.php?error=failed");
+    }
   }
 ?>
 

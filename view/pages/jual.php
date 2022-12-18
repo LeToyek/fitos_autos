@@ -31,7 +31,7 @@
       <div class="img-container"></div>
     </nav>
     
-    <form class="needs-validation container" novalidate>
+    <form class="needs-validation container" action="../../controller/form_jual_process.php"  novalidate>
       <div class="statis" style="margin-bottom: 24px;">
         <div class="title">
           <h5>Formulir Penjualan Mobil</h5>
@@ -98,6 +98,7 @@
       <div class="form-group">
         <label for="exampleFormControlTextarea1">Deskripsi</label>
         <textarea
+        name="deskripsi"
           class="form-control"
           id="exampleFormControlTextarea1"
           rows="3"
@@ -118,14 +119,18 @@
       <div class="form-row">
         <div class="form-group col-md-5">
           <label for="inputState">Transmisi</label>
-          <select id="inputState" class="form-control">
+          <select 
+          name="transmisi"
+          id="inputState" class="form-control">
             <option selected>Manual</option>
             <option>Automatic</option>
           </select>
         </div>
         <div class="form-group col-md-2">
           <label for="inputState">Jumlah Penumpang</label>
-          <select id="inputState" class="form-control">
+          <select
+          name="jumlah_penumpang" 
+          id="inputState" class="form-control">
             <option value="2" selected>2</option>
             <option value="4">4</option>
             <option value="5">5</option>
@@ -134,7 +139,9 @@
         </div>
         <div class="form-group col-md-5">
           <label for="inputState">Tipe</label>
-          <select id="inputState" class="form-control">
+          <select 
+          name="tipe"
+          id="inputState" class="form-control">
             <option selected>Sedan</option>
             <option value="SUV">SUV</option>
             <option value="MPV">MPV</option>
@@ -151,11 +158,11 @@
         <div class="form-group col-md-4">
           <label for="validationCustom01">Tahun</label>
           <input
+          name="tahun"
             type="text"
             class="form-control"
             id="validationCustom01"
-            placeholder="First name"
-            value="Mark"
+            placeholder="2024"
             required
           />
           <div class="invalid-feedback">Tahun pembelian harus diisi</div>
@@ -163,10 +170,11 @@
         <div class="form-group col-md-4">
           <label for="validationCustom02">Kilometer</label>
           <input
+          name="kilometer"
             type="text"
             class="form-control"
             id="validationCustom02"
-            placeholder="Last name"
+            placeholder="1999"
             required
           />
           <div class="invalid-feedback">Kilometer belum diisi</div>
@@ -175,9 +183,10 @@
         <div class="form-group col-md-4">
           <label for="validationCustom02">Pajak Jalan Exp</label>
           <input
+          name="pajak_date"
             class="form-control"
             id="datepicker"
-            placeholder="Last name"
+            placeholder="2 Desember 2015"
             required
           />
           <div class="invalid-feedback">Pajak masih kosong</div>
