@@ -31,10 +31,26 @@
         <a class="nav-link nav-link-ltr" href="garage.php">Garasi</a>
       </li>
     </ul>
-    <button onclick="location.href = '../../controller/logout_process.php'">Logout</button>
-    <div class="img-container"></div>
+    <?php
+        session_start();
+        if(isset($_SESSION['level'])){
+          if($_SESSION['level'] == 'admin'){
+            header('Location: admin.php');
+          }else if($_SESSION['username']){
+            echo '
+            <div class="d-flex ml-auto space-between">
+              <a class="px-4 my-auto text-dark" href="user_profile.php?username=' . $_SESSION['username'] . '"><p>' . $_SESSION['username'] . '</p></a>
+              <a class="logout-btn"href="../../controller/logout_process.php"><button>Logout</button></a>
+            </div>
+            ';
+          }
+        }
+        else{
+          echo '<a class="logout-btn"href="./login.php"><button>Login</button></a>';
+        }
+      ?>
   </nav>
-  
+
   <div class="container main">
     <div class="title">
       <h5>Koleksi Mobil Kami</h5>
@@ -45,29 +61,29 @@
       if (mysqli_num_rows($result) > 0) {
         while ($row = mysqli_fetch_array($result)) {
       ?>
-          <div class="card">
-            <img class="img-car" src="../../controller/<?php echo $row['foto']?>" alt="fotonya">
-            <div class="wrapper-btn">
-              <button onclick="location.href = 'beli.php?id=<?php echo $row['id']?>'">Check Out</button>
-            </div>
+      <div class="card">
+        <img class="img-car" src="../../controller/<?php echo $row['foto']?>" alt="fotonya">
+        <div class="wrapper-btn">
+          <button onclick="location.href = 'beli.php?id=<?php echo $row['id']?>'">Check Out</button>
+        </div>
 
-            <div class="bottom">
-              <div class="left">
-                <h6><?php echo $row['nama']?></h6>
-                <p>Start from <b>IDR <span><?php echo $row['harga']?></span></b></p>
-              </div>
-              <div class="right">
-                <img class="logo-car" src="../images/lambo.png" alt="">
-              </div>
-            </div>
+        <div class="bottom">
+          <div class="left">
+            <h6><?php echo $row['nama']?></h6>
+            <p>Start from <b>IDR <span><?php echo $row['harga']?></span></b></p>
           </div>
+          <div class="right">
+            <img class="logo-car" src="../images/lambo.png" alt="">
+          </div>
+        </div>
+      </div>
       <?php
         }
       } else {
         echo "0 result";
       }
       ?>
-      
+
       <div class="card">
         <img class="img-car" src="../images/aven.png" alt="">
         <div class="wrapper-btn">

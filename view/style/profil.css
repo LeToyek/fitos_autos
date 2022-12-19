@@ -1,0 +1,70 @@
+.sidebar {
+  padding: 24px;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 10px;
+}
+
+.sidebar ul {
+  height: 100%;
+  list-style-type: none;
+}
+
+.sidebar ul li button {
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.sidebar ul li button.active {
+  background-color: #FF0000;
+  outline: none !important;
+  color: white;
+}
+
+.sidebar ul li button.active:hover {
+  color: white !important;
+}
+
+.btn:focus,
+.btn:active {
+  outline: none !important;
+  box-shadow: none;
+}
+
+.tab-content-container {
+  padding: 24px;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 10px;
+}
+
+.my-btn-submit {
+  border-radius: 30px;
+  padding: 8px 40px;
+  background-color: #300303;
+  color: white;
+  border: none;
+  outline: none;
+  transition: all .2s ease;
+}
+
+.my-btn-submit:hover {
+  background-color: var(--primary);
+  color: #300303;
+}
+
+table {
+  margin-top: 12px;
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 16px;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
