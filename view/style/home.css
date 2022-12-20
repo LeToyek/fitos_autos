@@ -45,7 +45,7 @@
   width: 80%;
   border-radius: 20px;
   padding: 32px 48px;
-  top: 360px;
+  top: 320px;
   background-color: white;
   height: 340px;
 }
@@ -94,7 +94,6 @@
 
 .about-container {
   position: relative;
-  margin-top: 48px;
   display: flex;
   height: 480px;
   width: 100%;

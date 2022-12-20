@@ -10,6 +10,7 @@ $query = "INSERT INTO transaksi(id,id_mobil,id_pembeli) VALUES ('','$car_id','$u
 
 if (mysqli_query($conn, $query)) {
   echo "Data berhasil ditambah <br>";
+  header("location:../view/pages/home.php");
 } else {
   echo "Data gagal ditambahkan <br>" . mysqli_error($conn);
 }

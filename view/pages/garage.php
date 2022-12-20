@@ -69,8 +69,8 @@
 
         <div class="bottom">
           <div class="left">
-            <h6><?php echo $row['nama']?></h6>
-            <p>Start from <b>IDR <span><?php echo $row['harga']?></span></b></p>
+            <h5><?php echo $row['nama']?></h5>
+            <p style="font-size: 14px;">Start from <b>IDR <span><?php echo $row['harga']?></span></b></p>
           </div>
           <div class="right">
             <img class="logo-car" src="../images/lambo.png" alt="">
@@ -83,25 +83,6 @@
         echo "0 result";
       }
       ?>
-
-      <div class="card">
-        <img class="img-car" src="../images/aven.png" alt="">
-        <div class="wrapper-btn">
-          <button>Check Out</button>
-        </div>
-
-        <div class="bottom">
-          <div class="left">
-            <h6>Lamborghini aventador</h6>
-            <p>Start from <b>IDR 8.000.000.000</b></p>
-          </div>
-          <div class="right">
-            <img class="logo-car" src="../images/lambo.png" alt="">
-          </div>
-        </div>
-      </div>
-
-    </div>
     <footer class="container">
       <img src="../images/logo.png" width="72px" style="margin-bottom: 8px" alt="" />
       <p>

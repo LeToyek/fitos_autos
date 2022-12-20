@@ -22,7 +22,7 @@
 <body>
   <?php
       session_start();
-      if(!$_SESSION['username'] || $_SESSION['level'] == 1){
+      if(!isset($_SESSION['username'])){
         header('Location:./login.php');
       }
 

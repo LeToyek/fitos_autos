@@ -31,6 +31,10 @@
           name="password" class="input-login password" id="password" placeholder="Password" />
         </div>
         <input type="submit" class="btn-submit-login" value="Login" id="submit" name="submit" />
+        <p class="regis_link">Belum punya akun? <a href="register.php">
+          Daftar di sini
+          </a></p>
+        
       </form>
     </div>
   </div>

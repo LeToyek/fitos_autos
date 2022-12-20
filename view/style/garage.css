@@ -24,6 +24,13 @@
 }
 .card .bottom {
   padding: 8px ;
+  display: flex;
+}
+.card .bottom .left{
+  flex: 8;
+}
+.card .bottom .right{
+  flex:1;
 }
 .bottom .card .top {
   display: flex;
