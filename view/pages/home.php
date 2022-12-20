@@ -134,9 +134,8 @@
       <a class="btn-jual text-center" href="jual.php">Jual Sekarang</a>
     </div>
 
-    <div class="right">
       <img src="../images/right-car.png" alt="" />
-    </div>
+
   </div>
   <div class="step-jual">
     <h2 style="margin-bottom: 40px">Tata Cara Jual</h2>
