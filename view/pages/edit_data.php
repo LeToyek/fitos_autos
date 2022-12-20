@@ -25,8 +25,7 @@
       if(!$_SESSION['username'] || $_SESSION['level'] == 1){
         header('Location:./login.php');
       }
-
-    ?>
+  ?>
   <nav class="navbar navbar-expand-sm navbar-light">
     <img src="../images/logo.png" style="margin-right: 24px" alt="" />
     <ul class="navbar-nav">
